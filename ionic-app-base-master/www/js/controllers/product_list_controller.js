@@ -10,9 +10,5 @@ angular.module("spree").controller("ProductListCtrl",
           $scope.products.push(data.products[i]);
         }
     }); 
-
-    $scope.$on("cart", function(event, message) {
-      console.log("SHOW CART");
-    });
   }
 );

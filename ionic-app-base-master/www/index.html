@@ -21,17 +21,15 @@
     <script src="cordova.js"></script>
   </head>
 
-<body ng-controller="CartCtrl">
+<body ng-controller="HomeCtrl">
   <ion-header-bar class="bar bar-header bar-dark">
-    <a ng-href="#/home">
-      <button class="button icon-left ion-home">Home</button>
-    </a>
+    <button class="button icon-left ion-home" ng-click="goHome()">Home</button>
     <h1 class="title">Spree Commerce</h1>
-    <a ng-href="#/cart">
-      <button class="button icon-left ion-ios7-cart">Cart</button>
-    </a>
+    <button class="button icon-left ion-ios7-cart" ng-click="showCart()">Cart</button>
   </ion-header-bar>
-  <div ng-view></div>
+  <div ng-controller="CartCtrl">
+    <div ng-view></div>
+  </div>
 </body>
 </html>
 

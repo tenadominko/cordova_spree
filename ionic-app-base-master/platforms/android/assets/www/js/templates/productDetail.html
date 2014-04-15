@@ -1,24 +1,31 @@
 <ion-content>
-  <div class="list">
-    <div class="item item-divider"> 
-      {{productDetail.name}}
-    </div>
-    <div class="item">
-      {{productDetail.display_price}}
-    </div>
-    <div class="list card">
-      <div class="item item-image">
-        <img src="{{URL + productDetail.master.images[0].large_url}}" style="max-width: 100px; height: auto">
+  <div class="row row-center">
+    <div class="col col-50">
+      <div class="item item-image" style="border-style: none;">
+        <img src="{{URL + productDetail.master.images[0].large_url}}" style="max-width: 200px; height: auto">
       </div>
     </div>
+
+    <div class="col">
+      <div class="row">
+        <div class="item item-divider" style="border-style: none;">
+          {{productDetail.name}}</div>
+        </div>
+      <div class="row"><div class="item" style="border-style: none;">{{productDetail.display_price}}</div></div>
+      <div class="row">
+        <div class="col">Quantity: <input type="number" name="quantity" min="1" value="1"></div>
+        <div class="col"><button class="button button-positive" ng-click="addToCart(productDetail)">Add to cart</button></div>
+      </div>
+    </div>
+  </div>
+
     <ul class="list">
       <li ng-repeat="property in productDetail.product_properties">
         <div class="row">
-          <div class="col">{{property.property_name}}</div>
-          <div class="col">{{property.value}}</div>
+          <div class="col col-25">{{property.property_name}}</div>
+          <div class="col col-25">{{property.value}}</div>
         </div>
       </li>
     </ul>
-
   </div>
 </ion-content>

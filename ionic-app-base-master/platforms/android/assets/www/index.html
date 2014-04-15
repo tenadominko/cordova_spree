@@ -13,19 +13,23 @@
     <script src="js/app.js"></script>     
     <script src="js/controllers/product_list_controller.js"></script>    
     <script src="js/controllers/product_detail_controller.js"></script> 
-    <script src="js/controllers/taxon_controller.js"></script> 
+    <script src="js/controllers/home_controller.js"></script>
+    <script src="js/controllers/cart_controller.js"></script>
+    <script src="js/models/cart.js"></script>
 
     <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
     <script src="cordova.js"></script>
   </head>
-<body>
+
+<body ng-controller="HomeCtrl">
   <ion-header-bar class="bar bar-header bar-dark">
-    <a ng-href="#/home">
-      <button class="button icon-left ion-home">Home</button>
-    </a>
+    <button class="button icon-left ion-home" ng-click="goHome()">Home</button>
     <h1 class="title">Spree Commerce</h1>
-    <button class="button icon ion-navicon"></button>
+    <button class="button icon-left ion-ios7-cart" ng-click="showCart()">Cart</button>
   </ion-header-bar>
-  <div ng-view></div>
+  <div ng-controller="CartCtrl">
+    <div ng-view></div>
+  </div>
 </body>
 </html>
+
