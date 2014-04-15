@@ -1,0 +1,13 @@
+<ion-content>
+  <!-- our list and list items -->
+  <ul class="list">
+    <div ng-repeat="product in products">
+      <a class="item item-thumbnail-left" href="#/products/{{product.id}}">
+        <img src="{{URL + product.master.images[0].small_url}}"/>
+        <h2>{{product.name}}</h2>
+        <p>{{product.display_price}}</p>
+      </a>
+    </div>
+  </ul>
+</ion-content>
+
