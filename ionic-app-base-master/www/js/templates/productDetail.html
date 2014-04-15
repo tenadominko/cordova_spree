@@ -1,31 +1,35 @@
 <ion-content>
-  <div class="row row-center">
-    <div class="col col-50">
-      <div class="item item-image" style="border-style: none;">
-        <img src="{{URL + productDetail.master.images[0].large_url}}" style="max-width: 200px; height: auto">
-      </div>
-    </div>
+  <div class="item item-divider" style="border-style: none;">
+    {{productDetail.name}}
+  </div>
+  <div class="item" style="border-style: none;">
+    {{productDetail.display_price}}
+  </div>
 
+  <div class="item item-image" style="border-style: none;">
+    <img src="{{URL + productDetail.master.images[0].large_url}}" style="max-width: 200px; height: auto">
+  </div>
+
+  <div class="row">
     <div class="col">
-      <div class="row">
-        <div class="item item-divider" style="border-style: none;">
-          {{productDetail.name}}</div>
+      <div class="item item-input item-select" style="border-style: none;">
+        <div class="input-label">
+          Quantity: 
         </div>
-      <div class="row"><div class="item" style="border-style: none;">{{productDetail.display_price}}</div></div>
-      <div class="row">
-        <div class="col">Quantity: <input type="number" name="quantity" min="1" value="1"></div>
-        <div class="col"><button class="button button-positive" ng-click="addToCart(productDetail)">Add to cart</button></div>
+        <select id="productQuantity" ng-model="quantity" ng-options="n for n in range(10)"></select>
       </div>
+    </div>
+    <div class="col">
+      <button class="button button-positive" ng-click="addToCart(productDetail)">Add to cart</button>
     </div>
   </div>
 
-    <ul class="list">
-      <li ng-repeat="property in productDetail.product_properties">
-        <div class="row">
-          <div class="col col-25">{{property.property_name}}</div>
-          <div class="col col-25">{{property.value}}</div>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <ul class="list">
+    <li ng-repeat="property in productDetail.product_properties">
+      <div class="row">
+        <div class="col">{{property.property_name}}</div>
+        <div class="col">{{property.value}}</div>
+      </div>
+    </li>
+  </ul>
 </ion-content>

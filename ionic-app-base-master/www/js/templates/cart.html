@@ -4,7 +4,7 @@
       Ukupno: {{price | number:2}}
     </div>
     <div ng-repeat="item in items">
-      <a class="item item-thumbnail-left" href="#/products/{{item.product.id}}">
+      <a class="item item-thumbnail-left">
         <img src="{{URL + item.product.master.images[0].small_url}}"/>
         <h2>{{item.product.name}}</h2>
         <p>{{item.product.display_price}}</p>

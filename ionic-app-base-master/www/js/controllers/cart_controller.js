@@ -5,8 +5,8 @@ angular.module("spree").controller('CartCtrl',
     $scope.items = $scope.cart.items;
     $scope.price = $scope.cart.price;
 
-    $scope.$on("addToCart", function(evt, product) {
-      Cart.addToCart(product, 1);
+    $scope.$on("addToCart", function(evt, product, q) {
+      Cart.addToCart(product, q);
       $location.path("/cart");
     })
 });

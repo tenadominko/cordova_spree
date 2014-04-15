@@ -14,7 +14,19 @@ angular.module("spree").controller("ProductDetailCtrl",
     $scope.productId = $routeParams.productId;  
 
     $scope.addToCart = function(product) {
-      $rootScope.$broadcast("addToCart", product);
+      var sel = document.getElementById("productQuantity");
+      var q = sel.options[sel.selectedIndex].text;
+      $rootScope.$broadcast("addToCart", product, q);
+    }
+
+    $scope.quantity = 1;
+    $scope.range = function(max) {
+      var list = [];
+      for (var i = 1; i < max; i++) {
+        list.push(i);
+      }
+
+      return list;
     }
   }
 );
