@@ -3,18 +3,17 @@ angular.module("spree").controller("ProductDetailCtrl",
     $http({
       method: "JSONP",
       url: $rootScope.URL + "/api/products/" + $routeParams.productId,
-      params: {"callback": "JSON_CALLBACK",
-              "token": "89af628f481fa249cbec9ab2c20a93312ca80e95fd4247b3"}
-        }).success(function(data, status, headers, config) {
+      params: {"callback": "JSON_CALLBACK"}
+    }).success(function(data, status, headers, config) {
         $scope.productDetail = data;
-      }).error(function(data, status, headers, config) {
-        window.alert("ERROR");
     });
   
     $scope.productId = $routeParams.productId;  
 
     $scope.addToCart = function(product) {
-      $rootScope.$broadcast("addToCart", product);
+      var sel = document.getElementById("productQuantity");
+      var q = sel.options[sel.selectedIndex].text;
+      $rootScope.$broadcast("addToCart", product, q);
     }
 
     $scope.quantity = 1;

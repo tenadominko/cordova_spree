@@ -1,8 +1,8 @@
 angular.module("spree").controller("ProductListCtrl", 
-  function($scope, $http, $rootScope, $routeParams) {
+  function($scope, $http, $routeParams, $rootScope) {
     $http({
       method: 'JSONP',
-      url: 'http://169.254.8.205:3000/api/products?q[taxons_id_in][]=' + $routeParams.taxonId,
+      url: $rootScope.URL + '/api/products?q[taxons_id_in][]=' + $routeParams.taxonId,
       params: {"callback": "JSON_CALLBACK"}
     }).success(function(data, status, headers, config) {
         $scope.products = new Array();

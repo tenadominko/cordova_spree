@@ -20,6 +20,10 @@ angular.module("spree", [
         templateUrl: 'js/templates/cart.html',
         controller: 'CartCtrl'
       }).
+      when('/checkout', {
+        templateUrl: 'js/templates/checkout.html',
+        controller: 'CheckoutCtrl'
+      }).
       otherwise({
         redirectTo: '/home'
       });

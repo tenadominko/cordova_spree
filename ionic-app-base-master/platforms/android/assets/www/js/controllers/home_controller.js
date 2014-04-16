@@ -1,8 +1,8 @@
 angular.module("spree").controller('HomeCtrl', 
-  function($scope, $http, $rootScope, $location) {
+  function($scope, $http, $location, $rootScope) {
     $http({
       method: 'JSONP',
-      url: 'http://169.254.8.205:3000/api/taxons',
+      url: $rootScope.URL + '/api/taxons',
       params: {"callback": "JSON_CALLBACK"}
     }).success(function(data, status, headers, config) {
       $scope.taxons = new Array();
@@ -12,6 +12,16 @@ angular.module("spree").controller('HomeCtrl',
         }
       }
     });
+
+    $scope.itemButtons = [
+      {
+        text: "Edit",
+        type: "Button",
+        onTap: function(item) {
+          alert("Edit item: " + item.id);
+        }
+      }
+    ];
 
     $scope.goHome = function() {
       $location.path("/home");

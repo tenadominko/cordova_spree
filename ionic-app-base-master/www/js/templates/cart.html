@@ -1,15 +1,18 @@
 <ion-content>
-  <ul class="list">
-    <div class="item item-divider">
-      Ukupno: {{price | number:2}}
+  <div class="row">
+    <div class="item item-divider" style="border-style: none;">
+      Ukupno: {{price | number:2}} HRK
     </div>
-    <div ng-repeat="item in items">
-      <a class="item item-thumbnail-left">
+  </div>
+  <div class="row">
+    <button class="button button-block button-positive" ng-click="checkout()">Checkout</button>
+  </div>
+  <ion-list can-swipe="true" option-buttons="itemButtons"> 
+    <ion-item class="item item-thumbnail-left" ng-repeat="item in items" item="item">
         <img src="{{URL + item.product.master.images[0].small_url}}"/>
         <h2>{{item.product.name}}</h2>
         <p>{{item.product.display_price}}</p>
         <p>Količina: {{item.quantity}}</p>
-      </a>
-    </div>
-  </ul>
+    </ion-item>
+  </ion-list>
 </ion-content>

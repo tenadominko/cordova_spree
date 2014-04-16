@@ -29,6 +29,24 @@ angular.module("spree")
       }
 
       return cart;
+    },
+
+    removeFromCart: function(item) {
+      for (var i = 0; i < cart.items.length; i++) {
+        if (cart.items[i].product.id == item.product.id) {
+          cart.items.splice(i, 1);
+        }
+      }
+    },
+
+    createRequestParameters: function() {
+      var par = "";
+
+      for (var i = 0; i < cart.items.length; i++) {
+        par += "order[line_items]";
+        par += "[" + cart.items[i].product.id + "]";
+
+      }
     }
   }
 })

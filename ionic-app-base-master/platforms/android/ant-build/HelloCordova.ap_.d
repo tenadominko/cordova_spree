@@ -13,6 +13,7 @@
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/ant-build/res/drawable-ldpi/icon.png \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/_where-is-www.txt \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www \
+/home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/stylesheets \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/cordova.js \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/index.html \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js \
@@ -26,10 +27,12 @@
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/controllers/product_list_controller.js \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/controllers/cart_controller.js \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/controllers/home_controller.js \
+/home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/controllers/checkout_controller.js \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/controllers/product_detail_controller.js \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/templates/productDetail.html \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/templates/home.html \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/templates/productList.html \
+/home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/templates/checkout.html \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/js/templates/cart.html \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/lib/ionic \
 /home/tena/Documents/workspace/spree/ionic-app-base-master/platforms/android/assets/www/lib/ionic/css \
