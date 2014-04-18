@@ -6,8 +6,18 @@ angular.module("spree").controller("ProductDetailCtrl",
       params: {"callback": "JSON_CALLBACK"}
     }).success(function(data, status, headers, config) {
         $scope.productDetail = data;
+        if (data.has_variants) {
+          $scope.image = $rootScope.URL + data.variants[0].images[0].large_url;
+          $scope.variant_id = data.variants[0].id;
+        } else {
+          $scope.image = $rootScope.URL + data.master.images[0].large_url;
+        }
     });
-  
+
+    $scope.changeImage = function(ind) {
+      $scope.image = $rootScope.URL + $scope.productDetail.variants[ind].images[0].large_url;
+    }
+
     $scope.productId = $routeParams.productId;  
 
     $scope.addToCart = function(product) {

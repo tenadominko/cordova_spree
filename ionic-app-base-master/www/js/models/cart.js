@@ -5,6 +5,7 @@ angular.module("spree")
   return {
     addToCart: function(product, quantity) {
       var should_add = true;
+      var var_id;
 
       for (var i = 0; i < cart.items.length; i++) {
         if (cart.items[i].product.id == product.id) {
@@ -16,7 +17,7 @@ angular.module("spree")
       if (should_add) {
         cart.items.push({
           product: product,
-          quantity: quantity
+          quantity: quantity,
         });
       }
     },
@@ -45,8 +46,17 @@ angular.module("spree")
       for (var i = 0; i < cart.items.length; i++) {
         par += "order[line_items]";
         par += "[" + cart.items[i].product.id + "]";
+        par += "[variant_id]=" + cart.items[i].product.id;
+        par += "&order[line_items]";
+        par += "[" + cart.items[i].product.id + "]";
+        par += "[quantity]=" + cart.items[i].quantity;
 
+        if (i != (cart.items.length - 1)) {
+          par += "&";
+        } 
       }
+
+      return par;
     }
   }
 })

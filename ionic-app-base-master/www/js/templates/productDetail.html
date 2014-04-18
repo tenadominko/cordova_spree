@@ -7,8 +7,14 @@
   </div>
 
   <div class="item item-image" style="border-style: none;">
-    <img src="{{URL + productDetail.master.images[0].large_url}}" style="max-height: 200px; width: auto">
+    <img src="{{image}}" style="max-height: 200px; width: auto">
   </div>
+
+  <form action="">
+    <div ng-repeat="variant in productDetail.variants">
+      <input type="radio" name="variant_id" ng-model="variant_id" value="{{variant.id}}" ng-click="changeImage({{$index}})">{{variant.options_text}}<br>
+    </div>
+  </form>
 
   <div class="row">
     <div class="col">
